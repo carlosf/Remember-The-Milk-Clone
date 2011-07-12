@@ -1,0 +1,20 @@
+<html>
+<head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+        <title>{% block title %}{% endblock %} | Remember the Milk</title>
+
+  
+  <head>
+    <body>
+        <div class="menu">
+            <a href="{{ url_for('new_task') }}">Add new task<a> |
+            <a href="{{ url_for('list_tasks') }}">List all tasks</a>|
+	    <a href="{{ url_for('help') }}">Help</a></br></br>
+
+        </div>
+        {% block content %}
+        {% endblock %}
+
+
+  </body>
+</html>
