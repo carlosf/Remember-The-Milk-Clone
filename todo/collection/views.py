@@ -26,6 +26,10 @@ def list_tasks(page=1):
 def help():
     return render_template('tasks/help.html')
 
+@app.route('/about')
+def help():
+    return render_template('tasks/about.html')
+
 @app.route('/tasks/delete/<id>')
 def delete_task(id):
     task = Task.query.get_or_404(id)
