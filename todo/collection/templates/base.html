@@ -1,6 +1,7 @@
-<html>
+<html
 <head>
  <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+
 
 {% with messages = get_flashed_messages() %}
   {% if messages %}
@@ -23,8 +24,12 @@
 	    <a href="{{ url_for('help') }}">Help</a></br></br>
 
         </div>
+	
+	
         {% block content %}
         {% endblock %}
+
+ 				
 
 
   </body>
