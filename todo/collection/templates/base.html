@@ -12,6 +12,13 @@
     </ul>
   {% endif %}
 {% endwith %}
+        <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script> 
+        <script type="text/javascript" src="http://code.jquery.com/ui/1.8.13/jquery-ui.min.js"></script> 
+        <link id="sidebar-style-link" rel="stylesheet" type="text/css" href="http://sideroad.secret.jp/css/dark-glass/sidebar.css" /> 
+        <script type="text/javascript" src="https://raw.github.com/sideroad/jquery.sidebar/master/src/jquery.sidebar.js"></script> 
+
+
+
 
 <title>{% block title %}{% endblock %} | Remember the Milk</title>
 
@@ -25,11 +32,34 @@
 
         </div>
 	
-	
+                    <ul id="demo_menu1" > 
+                        <li><a href="/" >Home</a></li> 
+                        <li><a href="/help" >Help</a></li> 
+                        <li><a href="/about" >about</a></li> 
+                        <li><a href="<twitter-url-here>" >follow</a></li> 
+                    </ul> 
+
+<script type="text/javascript">
+ $("ul#demo_menu1").sidebar({
+            position:"right",
+            events:{
+                item : {
+                    enter : function(){
+                        $(this).find("a").animate({color:"red"}, 250);
+                    },
+                    leave : function(){
+                        $(this).find("a").animate({color:"white"}, 250);
+                    }
+                }
+            }
+        });
+
+  </script>  
+
+
         {% block content %}
         {% endblock %}
 
- 				
 
 
   </body>
